@@ -484,4 +484,4 @@ WHERE valor_factura.precio_total > 100;
 SELECT cliente.nombre, factura.numero_factura, listado_productos.id 
 FROM cliente FULL JOIN factura ON cliente.id = factura.cliente_id
 FULL JOIN listado_productos ON factura.numero_factura = listado_productos.numero_factura
-WHERE listado_productos.producto_id = 6;   
+WHERE listado_productos.producto_id = 6;
