@@ -469,10 +469,19 @@ JOIN valor_factura ON factura.numero_factura = valor_factura.numero_factura
 WHERE valor_factura.precio_total = (SELECT max(valor_factura.precio_total) FROM valor_factura);
 
 
-
+-- //////////////////////////COMPRAS MAYORES A 100//////////////////////////////////////////////////////
 
 SELECT cliente.nombre, factura.numero_factura, valor_factura.precio_total 
 FROM cliente FULL JOIN factura ON cliente.id = factura.cliente_id FULL 
 JOIN valor_factura ON factura.numero_factura = valor_factura.numero_factura 
 WHERE valor_factura.precio_total > 100;
 
+
+
+
+
+
+SELECT cliente.nombre, factura.numero_factura, listado_productos.id 
+FROM cliente FULL JOIN factura ON cliente.id = factura.cliente_id
+FULL JOIN listado_productos ON factura.numero_factura = listado_productos.numero_factura
+WHERE listado_productos.producto_id = 6;   
